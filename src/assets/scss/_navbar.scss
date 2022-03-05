@@ -17,7 +17,11 @@
         }
 
     }
-
+    .left-nav{
+       h2{ 
+           margin: 0;
+       }
+    }
     .right-nav{
         display: flex;
         flex-direction: row;
