@@ -1,0 +1,38 @@
+.place-card{
+    margin-left: 1vw;
+    margin-bottom: 1vh;
+    border: 0.3px solid rgb(155, 152, 152);
+    border-radius: 5px;
+    width: 24vw;
+
+
+    .place-card-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .place-card-footer{
+        padding: 10px;
+        .place-card-ranking-price{
+           display: flex;
+            flex-direction: row;
+            justify-content: space-between; 
+        }
+    .place-card-info{
+        text-align:end;
+    }
+    .place-card-awards{
+        margin-top: 10px;
+
+        .award-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .award-display-name{
+            text-align: end;
+        }
+    }
+    }
+}
+}

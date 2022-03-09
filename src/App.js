@@ -37,7 +37,6 @@ const App = () => {
 
   return (
     <div>
-        <CssBaseline />
         <Header />
         <List places={places} />
         <Map 
