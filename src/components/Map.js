@@ -4,9 +4,7 @@ import {  Paper, Typography, useMediaQuery } from '@material-ui/core'
 import Rating from '@material-ui/lab'
 
 
-const Map = () => {
-
-  const coordinates = { lat: 0, lng: 0}
+const Map = ( { setCoordinates, places, setBounds, coordinates }) => {
 
   return (
     <div>
@@ -19,7 +17,10 @@ const Map = () => {
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={''}
-        onChange={''}
+        onChange={(e) =>{
+          setCoordinates({ lat: e.center.lat, lng: e.center.lng })
+          setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw})
+        }}
         onChildClick={''}
       >
       </GoogleMapReact>

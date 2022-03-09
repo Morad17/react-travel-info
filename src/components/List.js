@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import PlaceDetails from './PlaceDetails'
 
-const List = () => {
+const List = ({places}) => {
 
   const [type, setType] = useState('restaurants')
   const [rating, setRating] = useState('restaurants')
@@ -25,6 +26,13 @@ const List = () => {
           <option value={5}>Above 5.0</option>
         </select>
       </form>
+      <div className="">
+          {places?.map((place, i) => (
+            <div className="" item key={i}>
+              <PlaceDetails place={place} />
+              </div>
+          ))}
+      </div>
     </div>
   )
 }
