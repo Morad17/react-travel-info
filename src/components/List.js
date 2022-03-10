@@ -7,7 +7,7 @@ const List = ({places}) => {
   const [rating, setRating] = useState('restaurants')
 
   return (
-    <div>
+    <div className="list-section">
       <h4>Restaurants, hotels and Attractions near you</h4>
       <form action="">
         <label htmlFor="">Type</label>

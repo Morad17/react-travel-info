@@ -9,7 +9,7 @@ const Map = ( { setCoordinates, places, setBounds, coordinates }) => {
   return (
     <div>
       <h4>Test</h4>
-      <div className="" style={{ height: '50vh', width: '50%' }}> 
+      <div className="" style={{width: '66vw', height: '80vh'}}> 
       <GoogleMapReact 
         bootstrapURLKeys={{ key: 'AIzaSyBKRCW_jcdtXZc84oYiyjpiDhYli5Z174A' }}
         defaultCenter={coordinates}

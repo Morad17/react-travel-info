@@ -32,6 +32,13 @@ const PlaceDetails = ({ place }) => {
               </div>
             ))}
           </section>
+          <section className="place-card-cusine">
+          {place?.cuisine?.map(({name})=>(
+            <div key={name}className="">
+              {name}
+            </div>
+          ))}
+          </section>
         </div>
       </div>
   )
