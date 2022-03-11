@@ -4,7 +4,10 @@ import LocationOnIcon from '@material-ui/icons/LocationOn'
 import PhoneIcon from '@material-ui/icons/Phone'
 import Rating  from '@material-ui/lab/Rating'
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
+
+  if(selected) refProp?.current?.scrollIntoView({ behaviour: "smooth", block: "start"})
+
   return (
     <div className="place-card">
 

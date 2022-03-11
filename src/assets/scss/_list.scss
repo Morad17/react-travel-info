@@ -1,4 +1,9 @@
 .list-section{
+    .places-list{
+        overflow-y: scroll;
+        height: 800px;
+    }
+    
     width: 33vw;
     // height: 100vh;
 }

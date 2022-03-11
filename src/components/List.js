@@ -1,15 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import PlaceDetails from './PlaceDetails'
 
-const List = ({places, childClicked}) => {
+const List = ({places, childClicked, isLoading, type, setType, rating, setRating}) => {
+  const [elRefs, setElRefs] = useState([])
 
-  const [type, setType] = useState('restaurants')
-  const [rating, setRating] = useState('restaurants')
-  console.log({childClicked})
+  useEffect(()=> {
+    const refs = Array(places?.length).fill().map((_, i) => elRefs[i] || createRef())
+    
+    setElRefs(refs)
+  }, [places])
 
   return (
     <div className="list-section">
       <h4>Restaurants, hotels and Attractions near you</h4>
+      {isLoading? (
+        <div className="loading">
+          Loading
+          </div>
+      ) : (
+        <>
       <form action="">
         <label htmlFor="">Type</label>
         <select value={type} onChange={(e) => setType(e.target.value)} id="">
@@ -27,13 +36,19 @@ const List = ({places, childClicked}) => {
           <option value={5}>Above 5.0</option>
         </select>
       </form>
-      <div className="">
+      <div className="places-list">
           {places?.map((place, i) => (
-            <div className="" item key={i}>
-              <PlaceDetails place={place} />
+            <div key={i} item className="">
+              <PlaceDetails 
+                place={place} 
+                selected={Number(childClicked) === i}
+                refProp={elRefs[i]}
+                />
               </div>
           ))}
       </div>
+      </>
+      )}
     </div>
   )
 }
