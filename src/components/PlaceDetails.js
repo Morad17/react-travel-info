@@ -1,5 +1,9 @@
 import React from 'react'
 
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import PhoneIcon from '@material-ui/icons/Phone'
+import Rating  from '@material-ui/lab/Rating'
+
 const PlaceDetails = ({ place }) => {
   return (
     <div className="place-card">
@@ -9,7 +13,12 @@ const PlaceDetails = ({ place }) => {
         <h2>{place.name}</h2>
       </div>
       <div className="place-card-footer">
-          <section className="place-card-ranking-price">
+          <section className="place-card-rating">
+          <Rating size="small" value={Number(place.rating)} readOnly />
+          <p>out of {place.num_reviews} reviews</p>
+          </section>
+          
+          <section className="place-card-ranking-price" >
             <span>
               <div className="place-card-subtitles">Price</div> 
               <div className="place-ranking">Ranking</div>
@@ -32,13 +41,34 @@ const PlaceDetails = ({ place }) => {
               </div>
             ))}
           </section>
-          <section className="place-card-cusine">
-          {place?.cuisine?.map(({name})=>(
-            <div key={name}className="">
+          <section className="place-card-cuisine">
+            {place?.cuisine?.map(({name})=>(
+            <div key={name}className="cuisine-info">
               {name}
             </div>
-          ))}
+            ))}
           </section>
+          <section className="place-card-address">
+            <LocationOnIcon /> 
+            { place?.address && (
+              <div className="place-address-info">
+              {place.address}
+              </div>
+            )}
+          </section>
+          <section className="place-card-phone">
+          <PhoneIcon /> 
+            { place?.phone && (
+              <div className="place-phone-info">
+              {place.phone}
+              </div>
+            )}
+          </section>
+          <div className="">
+              <button onClick={() => window.open(place.web_url, '_blank')}>Trip Adviser</button>
+              <button onClick={() => window.open(place.website, '_blank')}>Website</button>
+          </div>
+          
         </div>
       </div>
   )

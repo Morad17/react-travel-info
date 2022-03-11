@@ -12,27 +12,73 @@
         justify-content: center;
         text-align: center;
     }
-    .place-card-footer{
+        .place-card-footer{
         padding: 10px;
+        .place-card-rating{
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+             align-items: center; 
+        }
         .place-card-ranking-price{
-           display: flex;
+            display: flex;
             flex-direction: row;
             justify-content: space-between; 
         }
-    .place-card-info{
-        text-align:end;
-    }
-    .place-card-awards{
-        margin-top: 10px;
-
-        .award-card{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .award-display-name{
-            text-align: end;
+        .place-card-info{
+            text-align:end;
         }
-    }
-    }
+        .place-card-awards{
+            margin-top: 10px;
+
+            .award-card{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .award-display-name{
+                text-align: end;
+            }
+        }
+        }
+        .place-card-cuisine{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .cuisine-info{
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 2px;
+            background-color: gray;
+            max-width: 200px;
+            margin: 2px;
+            color: white;
+            font-size: 14px;
+            }
+            
+        }
+        .place-card-address{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 1.7rem;
+            .place-address-info{
+                text-align: end;
+                font-size: 14px;
+            }
+        }
+        .place-card-phone{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 1.7rem;
+            .place-phone-info{
+                text-align: end;
+                font-size: 14px;
+            }
+        }
 }
 }

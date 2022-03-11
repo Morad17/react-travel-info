@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import PlaceDetails from './PlaceDetails'
 
-const List = ({places}) => {
+const List = ({places, childClicked}) => {
 
   const [type, setType] = useState('restaurants')
   const [rating, setRating] = useState('restaurants')
+  console.log({childClicked})
 
   return (
     <div className="list-section">

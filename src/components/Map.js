@@ -2,12 +2,15 @@ import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import {  Paper, Typography, useMediaQuery } from '@material-ui/core'
 import Rating from '@material-ui/lab'
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 
 
-const Map = ( { setCoordinates, places, setBounds, coordinates }) => {
+const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked }) => {
+
+  const isDesktop = useMediaQuery('(min-width:600px)')
 
   return (
-    <div>
+    <div className="map-section">
       <h4>Test</h4>
       <div className="" style={{width: '66vw', height: '80vh'}}> 
       <GoogleMapReact 
@@ -21,8 +24,28 @@ const Map = ( { setCoordinates, places, setBounds, coordinates }) => {
           setCoordinates({ lat: e.center.lat, lng: e.center.lng })
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw})
         }}
-        onChildClick={''}
+        onChildClick={(child) => setChildClicked(child)}
       >
+        {places?.map((place, i)=> (
+          <div 
+            className="marker-container"
+            lat={Number(place.latitude)}
+            lng={Number(place.longitude)}
+            key={i}
+          >
+            {
+              !isDesktop ? (
+                <LocationOnOutlinedIcon color="primary" fontSize="large" />
+              ) : (
+                <div className="place-landmark-icons">
+                  <h4>{place.name}</h4>
+                  <img src={place.photo? place.photo.images.large.url : 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&w=1000&q=80'} alt={place.name} />
+                </div>
+              )
+            }
+
+          </div>
+        ))}
       </GoogleMapReact>
       </div>
     </div>
