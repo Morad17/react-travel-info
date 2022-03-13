@@ -9,7 +9,7 @@ import Map from "../components/Map";
 const Home = () => {
 
   const [places, setPlaces ] = useState([])
-  const [weatherdata, setWeatherData ] = useState([])
+  const [weatherData, setWeatherData ] = useState([])
   const [filteredPlaces, setFilteredPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
   const [bounds, setBounds ] = useState({})
@@ -41,7 +41,7 @@ const Home = () => {
         .then((data) => setWeatherData(data))
 
       getPlacesData( type, bounds.sw, bounds.ne)
-      .then((data)=> {
+        .then((data)=> {
         if(mounted){
           setPlaces(data?.filter((place) => place.name && place.num_reviews > 0))
           setFilteredPlaces([])

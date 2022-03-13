@@ -14,12 +14,12 @@ const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked,
       <h4>Test</h4>
       <div className="" style={{width: '66vw', height: '80vh'}}> 
       <GoogleMapReact 
-        bootstrapURLKeys={{ key: 'AIzaSyBKRCW_jcdtXZc84oYiyjpiDhYli5Z174A' }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
-        options={''}
+        options={{ disableDefaultUI:true, zoomControl:true}}
         onChange={(e) =>{
           setCoordinates({ lat: e.center.lat, lng: e.center.lng })
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw})
@@ -47,8 +47,8 @@ const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked,
           </div>
         ))}
         {weatherData?.list?.map((data, i) => (
-          <div key={i} lat={data.coord.lat} lng={data.coord.lng}className="">
-            <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}`} alt="" />
+          <div key={i} lat={data.coord.lat} lng={data.coord.lng} className="">
+            <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt="" />
           </div>
         ))}
       </GoogleMapReact>
