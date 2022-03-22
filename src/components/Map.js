@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react'
 import {  useMediaQuery } from '@material-ui/core'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 
+import mapStyles from './mapStyles'
 
 const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked, weatherData }) => {
 
@@ -18,7 +19,7 @@ const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked,
         center={coordinates}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
-        options={{ disableDefaultUI:true, zoomControl:true}}
+        options={{ disableDefaultUI:true, zoomControl:true, styles: mapStyles }}
         onChange={(e) =>{
           setCoordinates({ lat: e.center.lat, lng: e.center.lng })
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw})
