@@ -1,0 +1,42 @@
+.loader{
+    text-align: center;
+    .loading-heading{
+        font-size: 30px;
+        font-weight: 600;
+        margin: 30px;
+        animation: headingLoading 3s ease-in-out infinite;
+    }
+    .spinner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .spinner::after{
+        content: "";
+        background-color: white;
+        width: 75px;
+        height: 75px;
+        border: 20px solid white;
+        border-top-color: rgb(23, 75, 57);
+        border-bottom-color: rgb(23,75, 57);
+        border-radius: 50%;
+        animation: loading 1s ease-in-out infinite;
+    }
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes headingLoading {
+    from{
+        font-size: 30px;
+        color: black;
+    }
+    to {
+        font-size: 45px;
+        color: rgb(23, 75, 57);
+    }
+}

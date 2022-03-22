@@ -11,8 +11,8 @@ const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked,
 
   return (
     <div className="map-section">
-      <h4>Test</h4>
-      <div className="" style={{width: '66vw', height: '80vh'}}> 
+      <h2 className="map-header">Search Local Restaurants, Hotels and Attractions </h2>
+      <div className="map-render" style={{width: '66vw', height: '80vh'}}> 
       <GoogleMapReact 
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={coordinates}

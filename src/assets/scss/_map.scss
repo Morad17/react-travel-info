@@ -1,5 +1,11 @@
 .map-section{
-
+    text-align: center;
+    .map-header{
+        font-size: 26px;
+    }
+    .map-render{
+        margin: 0 auto;
+    }
     .place-landmark-icons{
         background-color: #fff;
         border: 1px solid white;

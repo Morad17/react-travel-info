@@ -1,10 +1,9 @@
 .place-card{
-    margin-left: 1vw;
-    margin-bottom: 1vh;
+    margin: 2vh auto;
     border: 0.3px solid rgb(155, 152, 152);
     border-radius: 5px;
-    width: 24vw;
-
+    width: 20vw;
+    box-shadow: 0 8px 16px 0px rgb(0 0 0 / 60%);
 
     .place-card-header{
         display: flex;

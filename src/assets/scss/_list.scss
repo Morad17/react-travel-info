@@ -1,9 +1,58 @@
 .list-section{
+    width: 25vw;
+    text-align: center;
+    .filters{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 19px;
+        .type{
+            border: 1px solid black;
+            border-radius: 0px;
+            padding: 5px;
+            margin: 10px 20px;
+        }
+        .rating{
+            border: 1px solid black;
+            border-radius: 0px;
+            padding: 5px;
+            margin: 10px 20px;
+        }
+
+        label{
+            padding:0 3px;
+            font-size: 19px;
+        }
+        select {
+            border: none;
+            padding: 3px 6px;
+        }
+        select:hover{
+            outline: none;
+        }
+        option{
+            font-size: 14px;
+            padding: 2px;
+        }
+    }
+    .filters:hover{
+        outline: none;
+    }
     .places-list{
         overflow-y: scroll;
         height: 800px;
     }
     
-    width: 33vw;
-    // height: 100vh;
+    .places-list::-webkit-scrollbar{
+        width: .5vw
+    }
+    .places-list::-webkit-scrollbar-track{
+        background-color: #9b9898;
+    }
+    .places-list::-webkit-scrollbar-thumb{
+        background-color: rgb(23, 75, 57);
+    }
+    
 }
