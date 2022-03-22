@@ -1,7 +1,6 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
-import {  Paper, Typography, useMediaQuery } from '@material-ui/core'
-import Rating from '@material-ui/lab'
+import {  useMediaQuery } from '@material-ui/core'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'
 
 
@@ -47,7 +46,7 @@ const Map = ( { setCoordinates, places, setBounds, coordinates, setChildClicked,
           </div>
         ))}
         {weatherData?.list?.map((data, i) => (
-          <div key={i} lat={data.coord.lat} lng={data.coord.lng} className="">
+          <div key={i} lat={data.coord.lat} lng={data.coord.lon} className="">
             <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt="" />
           </div>
         ))}

@@ -7,7 +7,7 @@
     justify-content: space-between;
     background-color: rgb(23, 75, 57);
     color: white;
-    
+
     ul{     
         padding: 0 5vw;
         li{
@@ -27,5 +27,15 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+    .search-bar{
+        background: white;
+        align-items: center;
+        align-content: center;
+        display: flex;
+        border-radius: 5px;
+        .MuiSvgIcon-root{
+            color: gray;
+        }
     }
 }

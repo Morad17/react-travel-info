@@ -4,18 +4,7 @@ import { InputBase } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 
 
-const Header = ( {setCoordinates}) => {
-
-    const [autocomplete, setAutoComplete] = useState(null)
-
-    const onLoad = (autoC) => setAutoComplete(autoC)
-
-    const onPlaceChanged = () => {
-        const lat = autocomplete.getPlace().geometry.location.lat();
-        const lng = autocomplete.getPlace().geometry.location.lng();
-
-        setCoordinates({ lat, lng })
-    }
+const Header = ({ onPlaceChanged, onLoad }) => {
 
     return (
         <nav className="main-nav">

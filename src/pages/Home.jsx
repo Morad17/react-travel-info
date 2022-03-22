@@ -16,6 +16,7 @@ const Home = () => {
   const [childClicked, setChildClicked ] = useState(null)
   const [isLoading, setIsLoading ] = useState(false);
 
+  const [autocomplete, setAutoComplete] = useState(null)
   const [type, setType] = useState('restaurants')
   const [rating, setRating] = useState('restaurants')
 
@@ -52,9 +53,18 @@ const Home = () => {
     }
   }, [type, bounds])
 
+  const onLoad = (autoC) => setAutoComplete(autoC)
+
+    const onPlaceChanged = () => {
+        const lat = autocomplete.getPlace().geometry.location.lat();
+        const lng = autocomplete.getPlace().geometry.location.lng();
+
+        setCoordinates({ lat, lng })
+    }
+
   return (
     <div className="home">
-        <Header setCoordinates={setCoordinates} />
+        <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad}/>
         <section className="content">
             <List 
               places={filteredPlaces.length ? filteredPlaces : places}

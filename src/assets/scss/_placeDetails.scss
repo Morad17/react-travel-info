@@ -10,6 +10,7 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+
     }
         .place-card-footer{
             
@@ -50,7 +51,7 @@
             border: 1px solid gray;
             border-radius: 10px;
             padding: 2px;
-            background-color: gray;
+            background-color: rgb(23, 75, 57);
             max-width: 200px;
             margin: 2px;
             color: white;
@@ -78,6 +79,17 @@
             .place-phone-info{
                 text-align: end;
                 font-size: 14px;
+            }
+        }
+        .card-buttons{
+            button{
+                font-size: 15px;
+                background-color: rgb(23, 75, 57);
+                color: white;
+                border-radius: 5px;
+                padding: 3px;
+                cursor: pointer;
+                margin: 3px;
             }
         }
 }

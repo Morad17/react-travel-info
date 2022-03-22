@@ -67,7 +67,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
               </div>
             )}
           </section>
-          <div className="">
+          <div className="card-buttons">
               <button onClick={() => window.open(place.web_url, '_blank')}>Trip Adviser</button>
               <button onClick={() => window.open(place.website, '_blank')}>Website</button>
           </div>
